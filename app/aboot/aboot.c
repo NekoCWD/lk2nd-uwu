@@ -3466,6 +3466,13 @@ void cmd_boot(const char *arg, void *data, unsigned sz)
 	fastboot_okay("");
 	fastboot_stop();
 
+	/* 
+	This helps me with debugging linux.
+	My device has carkit uart.
+	I need to switch the cable before starting linux to see all the logs.
+	*/
+	thread_sleep(5000); // TODO: make a menu that contain Connect UART and press power button 	
+	
 	boot_linux((void*) hdr->kernel_addr, (void*) hdr->tags_addr,
 		   (const char*) hdr->cmdline, board_machtype(),
 		   (void*) hdr->ramdisk_addr, hdr->ramdisk_size,
