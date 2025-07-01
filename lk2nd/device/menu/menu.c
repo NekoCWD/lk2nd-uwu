@@ -227,15 +227,15 @@ void display_fastboot_menu(void)
 
 
 	if (lk2nd_dev.panel.name)
-		fbcon_printf_ln(SILVER, y, incr, false, " Panyal:  %s", lk2nd_dev.panel.name);
+		fbcon_printf_ln(SILVER, y, incr, true, " Panyal:  %s", lk2nd_dev.panel.name);
 	if (lk2nd_dev.battery)
-		fbcon_printf_ln(SILVER, y, incr, false, " Battery:  %s", lk2nd_dev.battery);
+		fbcon_printf_ln(SILVER, y, incr, true, " Battery:  %s", lk2nd_dev.battery);
 #if WITH_LK2ND_DEVICE_2ND
 	if (lk2nd_dev.bootloader)
-		fbcon_printf_ln(SILVER, y, incr, false, " Bootloader:  %s", lk2nd_dev.bootloader);
+		fbcon_printf_ln(SILVER, y, incr, true, " Bootloader:  %s", lk2nd_dev.bootloader);
 #endif
 
-	fbcon_printf_ln(armv8 ? GREEN : YELLOW, y, incr, false, " ARM64:  %s",
+	fbcon_printf_ln(armv8 ? GREEN : YELLOW, y, incr, true, " ARM64:  %s",
 					armv8 ? "nyavailable" : "unyavailable");
 
 	/*
